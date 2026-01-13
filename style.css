@@ -8,6 +8,7 @@
 body {
   background: #0e0f14;
   color: #fff;
+  overflow-x: hidden;
 }
 
 /* HEADER */
@@ -44,39 +45,35 @@ body {
   padding: 20px;
 }
 
+/* TIMELINE */
 .timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
+  position: relative;
+  padding-left: 32px;
 }
 
-/* CARD */
-.slot {
-  display: grid;
-  grid-template-columns: 6px 1fr;
-  gap: 16px;
-}
-
-.indicator {
+/* vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
   background: linear-gradient(180deg, #6ae3ff, #b16cff);
   border-radius: 10px;
 }
 
+/* SLOT */
+.slot {
+  margin-bottom: 22px;
+}
+
+/* CARD */
 .card {
   background: #151823;
   padding: 18px;
   border-radius: 18px;
   box-shadow: 0 12px 25px rgba(0,0,0,0.35);
-}
-
-.card.current {
-  border: 2px solid #6ae3ff;
-  box-shadow: 0 0 18px rgba(106,227,255,0.45);
-}
-
-.card.break {
-  opacity: 0.6;
-  text-align: center;
 }
 
 .time {
@@ -95,4 +92,18 @@ body {
   gap: 18px;
   font-size: 14px;
   opacity: 0.85;
+}
+
+/* MOTION BALL */
+.motion-ball {
+  position: absolute;
+  left: 6px;
+  top: 20px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at top, #9ff, #8b5cf6);
+  box-shadow: 0 0 16px rgba(139,92,246,0.9);
+  transition: top 0.4s cubic-bezier(.4,0,.2,1);
+  z-index: 10;
 }
