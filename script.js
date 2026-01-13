@@ -24,7 +24,7 @@ const timetable = {
 
   thursday: [
     { start:"09:00 AM", end:"10:50 AM", subject:"Life Skills & Professional Communication Lab", teacher:"Sanjay", room:"240", type:"Lab" },
-    { start:"11:00 AM", end:"11:50 AM", subject:"Mathematics-2", teacher:"Pritee Agarwal", room:"3045", type:"Lecture" },
+    { start:"11:00 AM", end:"11:50 AM", subject:"Mathematics-2", teacher:"Pritee Agarwal", room:"3037", type:"Lecture" },
     { start:"01:00 PM", end:"01:50 PM", subject:"SDF-II", teacher:"MKS", room:"3045", type:"Lecture" },
 
     /* ✅ NEW MATHS LECTURE */
@@ -132,3 +132,4 @@ dayButtons.forEach(btn=>{
 
 document.querySelector(`[data-day="${today}"]`).classList.add("active");
 renderDay(today);
+
