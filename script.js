@@ -1,3 +1,6 @@
+/* =========================
+   F7 TIMETABLE
+========================= */
 const timetable = {
   monday: [
     { start:"09:00 AM", end:"10:50 AM", subject:"Software Development Lab-II", teacher:"Shruti Gupta, Arti Jain, Jatin", room:"CL1", type:"Lab" },
@@ -32,12 +35,9 @@ const timetable = {
   ]
 };
 
+
 const days = ["monday","tuesday","wednesday","thursday","friday","saturday"];
 const jsDays = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
-
-const timeline = document.querySelector(".timeline");
-const motionBall = document.querySelector(".motion-ball");
-const dayButtons = document.querySelectorAll(".day");
 
 function toMinutes(t){
   let [time,ampm]=t.split(" ");
@@ -47,12 +47,42 @@ function toMinutes(t){
   return h*60+m;
 }
 
-function renderDay(day){
-  timeline.innerHTML = `<div class="motion-ball"></div>`;
-  timetable[day].forEach(cls=>{
-    timeline.innerHTML += `
+
+let currentDayIndex = 0;
+
+const slotsEl = document.getElementById("slots");
+const ball = document.getElementById("motionBall");
+const dayButtons = document.querySelectorAll(".day");
+
+
+function renderDayByIndex(index){
+  currentDayIndex = index;
+  const day = days[index];
+
+  dayButtons.forEach(b=>b.classList.remove("active"));
+  dayButtons[index].classList.add("active");
+
+  slotsEl.innerHTML = "";
+
+  if(timetable[day]==="OFF"){
+    slotsEl.innerHTML = `
+      <div class="card current" style="text-align:center">
+        <div class="title">🎉 No class today</div>
+        <div class="time">F7 ke baccho maze karo 😎</div>
+      </div>`;
+    return;
+  }
+
+  const classes = timetable[day];
+  const nowMin = new Date().getHours()*60 + new Date().getMinutes();
+  const has12 = classes.some(c => c.start === "12:00 PM");
+  const has1 = classes.some(c => c.start === "01:00 PM");
+
+  classes.forEach(cls=>{
+    const isCurrent = nowMin >= toMinutes(cls.start) && nowMin <= toMinutes(cls.end);
+    slotsEl.innerHTML += `
       <div class="slot">
-        <div class="card">
+        <div class="card ${isCurrent ? "current":""}">
           <div class="time">${cls.start} – ${cls.end}</div>
           <div class="title">${cls.subject}</div>
           <div class="meta">
@@ -63,37 +93,94 @@ function renderDay(day){
         </div>
       </div>`;
   });
-  setTimeout(updateMotionBall,200);
+
+  if (!has12 && has1) addBreak("12:00 PM – 01:00 PM");
+  else if (has12 && !has1) addBreak("01:00 PM – 02:00 PM");
+  else if (!has12 && !has1) addBreak("12:00 PM – 02:00 PM");
+
+  window.scrollTo({ top: 0 });
+  requestAnimationFrame(updateBall);
 }
 
-function updateMotionBall(){
-  const ball = document.querySelector(".motion-ball");
-  const slots = document.querySelectorAll(".slot");
-  if(!ball||!slots.length) return;
+function addBreak(time){
+  slotsEl.innerHTML += `
+    <div class="slot">
+      <div class="card break">
+        <div class="title">☕ Break</div>
+        <div class="time">${time}</div>
+      </div>
+    </div>`;
+}
 
-  let target = slots[0];
-  const now = new Date();
-  const nowMin = now.getHours()*60 + now.getMinutes();
 
-  slots.forEach(slot=>{
-    const start = slot.querySelector(".time").innerText.split("–")[0].trim();
-    if(nowMin >= toMinutes(start)) target = slot;
+function updateBall(){
+  const timeline = document.querySelector(".timeline");
+  const rect = timeline.getBoundingClientRect();
+  const mid = window.scrollY + window.innerHeight / 2;
+
+  const progress = Math.min(
+    Math.max((mid - rect.top) / rect.height, 0),
+    1
+  );
+
+  ball.style.top = progress * (rect.height - 16) + "px";
+}
+
+window.addEventListener("scroll", updateBall);
+
+
+dayButtons.forEach((btn, index)=>{
+  btn.addEventListener("click", ()=>{
+    renderDayByIndex(index);
   });
-
-  ball.style.top = target.offsetTop + 20 + "px";
-}
-
-let today = jsDays[new Date().getDay()];
-if(!days.includes(today)) today="monday";
-
-dayButtons.forEach(btn=>{
-  btn.onclick=()=>{
-    dayButtons.forEach(b=>b.classList.remove("active"));
-    btn.classList.add("active");
-    renderDay(btn.dataset.day);
-  };
 });
 
-document.querySelector(`[data-day="${today}"]`).classList.add("active");
-renderDay(today);
+
+let startX = 0;
+let endX = 0;
+
+const swipeArea = document.querySelector(".swipe-area");
+
+swipeArea.addEventListener("touchstart", e=>{
+  startX = e.touches[0].clientX;
+});
+
+swipeArea.addEventListener("touchend", e=>{
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
+});
+
+/* mouse swipe */
+let mouseDown = false;
+
+swipeArea.addEventListener("mousedown", e=>{
+  mouseDown = true;
+  startX = e.clientX;
+});
+
+swipeArea.addEventListener("mouseup", e=>{
+  if(!mouseDown) return;
+  mouseDown = false;
+  endX = e.clientX;
+  handleSwipe();
+});
+
+function handleSwipe(){
+  const diff = endX - startX;
+  if(Math.abs(diff) < 50) return;
+
+  if(diff < 0 && currentDayIndex < days.length - 1){
+    renderDayByIndex(currentDayIndex + 1);
+  }
+  if(diff > 0 && currentDayIndex > 0){
+    renderDayByIndex(currentDayIndex - 1);
+  }
+}
+
+
+let today = jsDays[new Date().getDay()];
+if(!days.includes(today)) today = "monday";
+
+renderDayByIndex(days.indexOf(today));
+updateBall();
 
