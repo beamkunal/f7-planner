@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>F7 Planner</title>
+
+ 
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0e0f14">
+  <link rel="apple-touch-icon" href="icon-192.png">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,24 +19,32 @@
 </header>
 
 <div class="day-tabs">
-  <button class="day" data-day="monday">Mon</button>
-  <button class="day" data-day="tuesday">Tue</button>
-  <button class="day" data-day="wednesday">Wed</button>
-  <button class="day" data-day="thursday">Thu</button>
-  <button class="day" data-day="friday">Fri</button>
-  <button class="day" data-day="saturday">Sat</button>
+  <button class="day">Mon</button>
+  <button class="day">Tue</button>
+  <button class="day">Wed</button>
+  <button class="day">Thu</button>
+  <button class="day">Fri</button>
+  <button class="day">Sat</button>
 </div>
 
-<main class="container">
-  <div class="timeline swipe-area">
-    <div class="timeline-line"></div>
-    <div class="motion-ball" id="motionBall"></div>
-    <div id="slots"></div>
-  </div>
-</main>
+
+<div class="swipe-area">
+  <main class="container">
+    <div class="timeline">
+      <div id="motionBall" class="motion-ball"></div>
+      <div id="slots"></div>
+    </div>
+  </main>
+</div>
 
 <script src="script.js"></script>
+
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+  }
+</script>
+
 </body>
 </html>
-
-
