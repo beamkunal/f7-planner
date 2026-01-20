@@ -8,7 +8,7 @@ const timetable = {
   ],
   tuesday: [
     { start:"09:00 AM", end:"09:50 AM", subject:"SDF-II Tutorial", teacher:"MKS, Zubair", room:"3084", type:"Tutorial" },
-    { start:"10:00 AM", end:"10:50 AM", subject:"Mathematics-2", teacher:"Pritee Agarwal", room:"3045", type:"Lecture" },
+    { start:"10:00 AM", end:"10:50 AM", subject:"Mathematics-2", teacher:"Pritee Agarwal", room:"3092", type:"Lecture" },
     { start:"11:00 AM", end:"11:50 AM", subject:"Mathematics-2 Tutorial", teacher:"Haroon Sir", room:"127", type:"Tutorial" },
     { start:"01:00 PM", end:"03:50 PM", subject:"Workshop", teacher:"Niraj Kumar", room:"WS04", type:"Lab" }
   ],
@@ -183,3 +183,4 @@ if(!days.includes(today)) today = "monday";
 
 renderDayByIndex(days.indexOf(today));
 updateBall();
+
