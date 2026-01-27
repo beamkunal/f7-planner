@@ -17,8 +17,8 @@ const timetable = {
     { start:"11:00 AM", end:"11:50 AM", subject:"SDF-II", teacher:"MKS", room:"228", type:"Lecture" },
     { start:"01:00 PM", end:"01:50 PM", subject:"Universal Human Values", teacher:"Urbashi Satpathy", room:"3028", type:"Lecture" },
 
-    // ✅ SDF Extra Class (Wednesday 02:00 PM - 02:50 PM)
-    { start:"02:00 PM", end:"02:50 PM", subject:"SDF Extra Class", teacher:"MKS", room:"228", type:"Lecture" },
+    
+    { start:"02:00 PM", end:"02:50 PM", subject:"break hai", teacher:"none", room:"228", type:"Lecture" },
 
     { start:"03:00 PM", end:"03:50 PM", subject:"Physics-2", teacher:"Urbashi Satpathy", room:"3028", type:"Lecture" }
   ],
@@ -35,8 +35,8 @@ const timetable = {
     { start:"09:00 AM", end:"09:50 AM", subject:"Physics-2 Tutorial", teacher:"Urbashi Satpathy", room:"116", type:"Tutorial" },
     { start:"10:00 AM", end:"10:50 AM", subject:"Physics-2", teacher:"Urbashi Satpathy", room:"3045", type:"Lecture" },
 
-    // ✅ SDF Extra Class (Saturday 11:00 AM - 11:50 AM)
-    { start:"11:00 AM", end:"11:50 AM", subject:"SDF Extra Class", teacher:"MKS", room:"3045", type:"Lecture" },
+   
+    { start:"11:00 AM", end:"11:50 AM", subject:"break hai", teacher:"none", room:"mph,cafe", type:"Lecture" },
 
     { start:"12:00 PM", end:"12:50 PM", subject:"Universal Human Values", teacher:"Urbashi Satpathy", room:"3045", type:"Lecture" }
   ]
@@ -183,4 +183,5 @@ if(!days.includes(today)) today = "monday";
 
 renderDayByIndex(days.indexOf(today));
 updateBall();
+
 
