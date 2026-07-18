@@ -1,112 +1,715 @@
+
+
+/* =====================================
+   F7 PLANNER
+   Sage Green + Beige Theme
+===================================== */
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Inter,system-ui,sans-serif;
+  font-family:'Inter',sans-serif;
+}
+
+:root{
+
+  --bg:#FCFBF7;
+  --bg2:#F5F1E8;
+
+  --card:#FFFFFF;
+
+  --border:#E8E4DA;
+
+  --sage:#A3B18A;
+
+  --sageDark:#588157;
+
+  --olive:#6B705C;
+
+  --text:#2F3A2F;
+
+  --muted:#7A7A7A;
+
+  --shadow:
+          0 12px 35px rgba(0,0,0,.08);
+
+  --radius:22px;
+
 }
 
 body{
-  background:#0e0f14;
-  color:#fff;
-  overflow-x:hidden;
+
+  background:
+          linear-gradient(
+                  180deg,
+                  var(--bg),
+                  var(--bg2));
+
+  color:var(--text);
+
+  min-height:100vh;
+
 }
 
+
+
+/* ==========================
+HEADER
+========================== */
 
 .topbar{
-  padding:22px;
-  font-size:26px;
+
+  padding:30px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+}
+
+.topbar h1{
+
+  font-size:34px;
+
   font-weight:700;
+
+}
+
+.subtitle{
+
+  margin-top:6px;
+
+  color:var(--muted);
+
+  font-size:15px;
+
+}
+
+.clock{
+
+  background:white;
+
+  padding:12px 20px;
+
+  border-radius:16px;
+
+  font-size:22px;
+
+  font-weight:700;
+
+  color:var(--sageDark);
+
+  box-shadow:var(--shadow);
+
 }
 
 
+
+/* ==========================
+DASHBOARD
+========================== */
+
+.dashboard{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:18px;
+
+  padding:0 25px 25px;
+
+}
+
+.dash-card{
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:20px;
+
+  box-shadow:var(--shadow);
+
+  border:1px solid var(--border);
+
+  transition:.3s;
+
+}
+
+.dash-card:hover{
+
+  transform:translateY(-5px);
+
+}
+
+.dash-title{
+
+  color:var(--muted);
+
+  font-size:14px;
+
+  margin-bottom:10px;
+
+}
+
+.dash-value{
+
+  font-size:22px;
+
+  font-weight:700;
+
+  color:var(--olive);
+
+}
+
+
+
+/* ==========================
+DAY BUTTONS
+========================== */
+
 .day-tabs{
+
   display:flex;
+
   gap:10px;
-  padding:0 20px 18px;
+
+  overflow:auto;
+
+  padding:0 25px 25px;
+
 }
 
 .day{
-  background:#1a1d2b;
-  color:#aaa;
+
   border:none;
-  padding:8px 14px;
+
+  background:#E8E4DA;
+
+  color:#555;
+
+  padding:12px 20px;
+
   border-radius:999px;
+
   cursor:pointer;
+
+  transition:.25s;
+
+  font-weight:600;
+
+  white-space:nowrap;
+
+}
+
+.day:hover{
+
+  background:#DAD7CD;
+
 }
 
 .day.active{
-  background:linear-gradient(135deg,#6ae3ff,#b16cff);
-  color:#000;
-  font-weight:600;
+
+  background:var(--sageDark);
+
+  color:white;
+
 }
 
+
+
+/* ==========================
+MAIN
+========================== */
 
 .container{
-  padding:20px;
-}
 
+  padding:25px;
+
+}
 
 .timeline{
-  position:relative;
-}
 
+  position:relative;
+
+}
 
 .motion-ball{
+
   position:absolute;
-  left:4px;
-  top:0;
-  width:14px;
-  height:14px;
+
+  left:6px;
+
+  width:18px;
+
+  height:18px;
+
   border-radius:50%;
-  background:radial-gradient(circle,#a5f3fc,#8b5cf6);
-  box-shadow:0 0 16px rgba(139,92,246,.9);
+
+  background:var(--sageDark);
+
+  box-shadow:
+
+          0 0 18px rgba(88,129,87,.45);
+
   z-index:5;
+
+}
+/* ==========================
+TIMELINE LINE
+========================== */
+
+.timeline::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:14px;
+
+  top:0;
+
+  bottom:0;
+
+  width:4px;
+
+  border-radius:10px;
+
+  background:#DAD7CD;
+
 }
 
+
+/* ==========================
+SLOTS
+========================== */
 
 .slot{
-  margin-left:20px;
-  margin-bottom:22px;
+
+  margin-left:45px;
+
+  margin-bottom:24px;
+
 }
 
+
+/* ==========================
+CARD
+========================== */
+
 .card{
-  background:#151823;
-  padding:18px;
-  border-radius:18px;
-  box-shadow:0 12px 25px rgba(0,0,0,.35);
+
+  background:var(--card);
+
+  border-radius:22px;
+
+  padding:20px;
+
+  border:1px solid var(--border);
+
+  box-shadow:var(--shadow);
+
+  transition:.25s;
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+.card:hover{
+
+  transform:translateY(-4px);
+
+  box-shadow:0 20px 40px rgba(0,0,0,.10);
+
 }
 
 .card.current{
-  border:2px solid #6ae3ff;
-  box-shadow:0 0 20px rgba(106,227,255,.45);
+
+  background:#A3B18A;
+
+  color:white;
+
+  border-left:8px solid #588157;
+
 }
 
-.card.break{
-  opacity:.6;
-  text-align:center;
+.card.current .subject,
+
+.card.current .code,
+
+.card.current .info,
+
+.card.current .time{
+
+  color:white !important;
+
+}
+
+
+/* ==========================
+TOP ROW
+========================== */
+
+.top-row{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:14px;
+
 }
 
 .time{
+
   font-size:14px;
-  opacity:.7;
+
+  font-weight:600;
+
+  color:var(--muted);
+
 }
 
-.title{
-  font-size:20px;
+
+/* ==========================
+BADGES
+========================== */
+
+.badge{
+
+  padding:6px 14px;
+
+  border-radius:999px;
+
+  font-size:12px;
+
   font-weight:700;
-  margin:6px 0 10px;
+
+  color:white;
+
 }
 
-.meta{
+
+/* ==========================
+TEXT
+========================== */
+
+.subject{
+
+  font-size:23px;
+
+  font-weight:700;
+
+  margin-bottom:10px;
+
+  line-height:1.35;
+
+}
+
+.code{
+
+  font-size:13px;
+
+  font-weight:600;
+
+  color:#888;
+
+  margin-bottom:16px;
+
+}
+
+.info{
+
   display:flex;
-  gap:16px;
-  font-size:14px;
-  opacity:.85;
+
+  align-items:center;
+
+  gap:10px;
+
+  font-size:15px;
+
+  margin-top:8px;
+
+  color:#666;
+
 }
 
 
-.swipe-area{
-  touch-action:pan-y;
+/* ==========================
+FREE & LUNCH
+========================== */
+
+.card:has(.badge[style*="ADB5BD"]){
+
+  background:#F7F7F7;
+
+}
+
+.card:has(.badge[style*="DDB892"]){
+
+  background:#FFF5E8;
+
 }
 
 
+/* ==========================
+BOTTOM NAV
+========================== */
+
+.bottom-nav{
+
+  position:fixed;
+
+  bottom:0;
+
+  left:0;
+
+  right:0;
+
+  height:72px;
+
+  background:rgba(255,255,255,.90);
+
+  backdrop-filter:blur(16px);
+
+  display:flex;
+
+  justify-content:space-around;
+
+  align-items:center;
+
+  border-top:1px solid var(--border);
+
+  z-index:100;
+
+}
+
+.nav-item{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  gap:4px;
+
+  font-size:13px;
+
+  color:#777;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.25s;
+
+}
+
+.nav-item.active{
+
+  color:var(--sageDark);
+
+}
+
+
+/* ==========================
+SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+  width:8px;
+
+  height:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+  background:#C9C5BC;
+
+  border-radius:999px;
+
+}
+
+::-webkit-scrollbar-track{
+
+  background:transparent;
+
+}
+
+
+/* ==========================
+ANIMATIONS
+========================== */
+
+.card{
+
+  animation:fadeUp .45s ease;
+
+}
+
+@keyframes fadeUp{
+
+  from{
+
+    opacity:0;
+
+    transform:translateY(18px);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+  }
+
+}
+
+.day{
+
+  transition:all .25s ease;
+
+}
+
+.day:hover{
+
+  transform:translateY(-2px);
+
+}
+
+.motion-ball{
+
+  transition:top .25s linear;
+
+}
+
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+  .dashboard{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .topbar{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+  }
+
+  .clock{
+
+    align-self:flex-end;
+
+  }
+
+  .subject{
+
+    font-size:20px;
+
+  }
+
+  .container{
+
+    padding:18px;
+
+  }
+
+  .slot{
+
+    margin-left:34px;
+
+  }
+
+  .timeline::before{
+
+    left:10px;
+
+  }
+
+  .motion-ball{
+
+    left:2px;
+
+  }
+
+  .bottom-nav{
+
+    height:68px;
+
+  }
+
+  body{
+
+    padding-bottom:90px;
+
+  }
+
+}
+
+@media(max-width:500px){
+
+  .topbar h1{
+
+    font-size:28px;
+
+  }
+
+  .day{
+
+    padding:10px 16px;
+
+    font-size:14px;
+
+  }
+
+  .subject{
+
+    font-size:18px;
+
+  }
+
+  .info{
+
+    font-size:13px;
+
+  }
+
+  .dash-value{
+
+    font-size:18px;
+
+  }
+
+  .clock{
+
+    font-size:18px;
+
+    padding:10px 16px;
+
+  }
+
+}

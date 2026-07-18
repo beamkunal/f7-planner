@@ -1,50 +1,195 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>F7 Planner</title>
 
- 
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>🌿 F7 Planner</title>
+
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#0e0f14">
-  <link rel="apple-touch-icon" href="icon-192.png">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+
+  <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
 </head>
+
 <body>
 
 <header class="topbar">
-  <h1>F7 Planner</h1>
+
+  <div>
+
+    <h1>🌿 F7 Planner</h1>
+
+    <p class="subtitle">
+      Semester III • Batch F7
+    </p>
+
+  </div>
+
+  <div id="clock"
+       class="clock">
+    00:00
+  </div>
+
 </header>
 
+
+<section class="dashboard">
+
+  <div class="dash-card">
+
+    <div class="dash-title">
+
+      📅 Today
+
+    </div>
+
+    <div id="todayName"
+         class="dash-value">
+
+      Monday
+
+    </div>
+
+  </div>
+
+
+  <div class="dash-card">
+
+    <div class="dash-title">
+
+      📖 Current Class
+
+    </div>
+
+    <div id="currentClass"
+         class="dash-value">
+
+      No Class
+
+    </div>
+
+  </div>
+
+
+  <div class="dash-card">
+
+    <div class="dash-title">
+
+      ⏭ Next Class
+
+    </div>
+
+    <div id="nextClass"
+         class="dash-value">
+
+      --
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
 <div class="day-tabs">
+
   <button class="day">Mon</button>
+
   <button class="day">Tue</button>
+
   <button class="day">Wed</button>
+
   <button class="day">Thu</button>
+
   <button class="day">Fri</button>
+
   <button class="day">Sat</button>
+
 </div>
+
 
 
 <div class="swipe-area">
+
   <main class="container">
+
     <div class="timeline">
-      <div id="motionBall" class="motion-ball"></div>
+
+      <div
+              id="motionBall"
+              class="motion-ball">
+      </div>
+
       <div id="slots"></div>
+
     </div>
+
   </main>
+
 </div>
+
+
+
+<footer class="bottom-nav">
+
+  <div class="nav-item active">
+
+    🏠
+
+    <span>Today</span>
+
+  </div>
+
+  <div class="nav-item">
+
+    📅
+
+    <span>Timetable</span>
+
+  </div>
+
+  <div class="nav-item">
+
+    📚
+
+    <span>Subjects</span>
+
+  </div>
+
+  <div class="nav-item">
+
+    ⚙
+
+    <span>Settings</span>
+
+  </div>
+
+</footer>
+
 
 <script src="script.js"></script>
 
-
 <script>
-  if ("serviceWorker" in navigator) {
+
+  if("serviceWorker" in navigator){
+
     navigator.serviceWorker.register("sw.js");
+
   }
+
 </script>
 
 </body>
+
 </html>
