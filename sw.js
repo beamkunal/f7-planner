@@ -1,4 +1,4 @@
-const CACHE_NAME = "f7-planner-v3";
+const CACHE_NAME = "f7-planner-v4";
 
 const ASSETS = [
   "./",
