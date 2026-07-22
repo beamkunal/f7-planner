@@ -3,362 +3,326 @@
    Semester III
 ========================================================== */
 
+const LUNCH = {
+  subject: "🍽️ Lunch Break",
+  code: "",
+  teacher: "",
+  room: "",
+  batch: "",
+  type: "Break"
+};
+
 const timetable = {
 
-  monday:[
+  monday: [
+
     {
-      start:"09:00 AM",
-      end:"09:50 AM",
-      subject:"Object Oriented Programming using Java",
-      code:"24B15CS214",
-      teacher:"Pallavi",
+      start:"9:00 AM",
+      end:"9:50 AM",
+      subject:"Unix Programming Lab",
+      code:"UPL",
+      teacher:"PLV",
       room:"228",
-      type:"Lecture",
-      batch:"F7 + F8"
+      batch:"F7 + F8",
+      type:"Lecture"
     },
+
     {
       start:"10:00 AM",
       end:"10:50 AM",
       subject:"Economics",
-      code:"15B11HS211",
-      teacher:"Alok",
+      code:"ECO",
+      teacher:"ALOK",
       room:"3040",
-      type:"Lecture",
-      batch:"F7 + F8"
+      batch:"F7 + F8",
+      type:"Lecture"
     },
+
     {
       start:"11:00 AM",
       end:"11:50 AM",
       subject:"Theory of Computation",
-      code:"24B11CS212",
-      teacher:"Ankit",
+      code:"TOC",
+      teacher:"ANK",
       room:"3040",
-      type:"Lecture",
-      batch:"F7 + F8"
+      batch:"F7 + F8",
+      type:"Lecture"
     },
+
     {
       start:"12:00 PM",
       end:"12:50 PM",
-      subject:"Free Time",
-      type:"Free"
+      subject:"Math. Foundations for AI & DS",
+      code:"MFAIDS",
+      teacher:"MUKESH",
+      room:"225",
+      batch:"F7 + F8",
+      type:"Tutorial"
     },
+
     {
-      start:"01:00 PM",
-      end:"01:50 PM",
-      subject:"Lunch Break",
-      type:"Lunch"
+      ...LUNCH,
+      start:"12:50 PM",
+      end:"2:00 PM"
     },
+
     {
-      start:"02:00 PM",
-      end:"03:50 PM",
-      subject:"Database Management Systems Lab",
-      code:"24B15CS215",
-      teacher:"Vaibhav, Ankit, Priyanka Kwatra, NFCS19",
-      room:"Lab C12",
-      type:"Lab",
-      batch:"F7 + F8 + F9"
-    },
-    {
-      start:"04:00 PM",
-      end:"04:50 PM",
-      subject:"Free Time",
-      type:"Free"
+      start:"2:00 PM",
+      end:"3:50 PM",
+      subject:"OOP using Java Lab",
+      code:"OOP Lab",
+      teacher:"Vaibhav / ANK / PRM",
+      room:"CL2",
+      batch:"F8 + F7(NFCS19)",
+      type:"Practical"
     }
+
   ],
 
   tuesday:[
+
     {
-      start:"09:00 AM",
-      end:"09:50 AM",
-      subject:"Mathematical Foundations for AI & Data Science Tutorial",
-      code:"25B11MA213",
-      teacher:"Ajay",
+      start:"9:00 AM",
+      end:"9:50 AM",
+      subject:"Math. Foundations for AI & DS",
+      code:"MFAIDS",
+      teacher:"AJAY",
       room:"3117",
-      type:"Tutorial",
-      batch:"F7"
+      batch:"F7 + F8",
+      type:"Tutorial"
     },
+
     {
       start:"10:00 AM",
       end:"10:50 AM",
-      subject:"Mathematical Foundations for AI & Data Science",
-      code:"25B11MA213",
-      teacher:"Ajay",
+      subject:"Math. Foundations for AI & DS",
+      code:"MFAIDS",
+      teacher:"AJAY",
       room:"3093",
-      type:"Lecture",
-      batch:"F7 + F8"
+      batch:"F7 + F8",
+      type:"Lecture"
     },
+
     {
       start:"11:00 AM",
       end:"12:50 PM",
       subject:"Database Management Systems Lab",
-      code:"24B11CS213",
-      teacher:"Noor Muhammad, Aditi Sharma, SHG, Kedar Nath, SKM",
-      room:"Lab C12",
-      type:"Lab",
-      batch:"F7 + F8 + F9"
+      code:"DBMS Lab",
+      teacher:"NMD / ADS / SHG / KNS / SKM",
+      room:"CL2",
+      batch:"F8 + F7(NFCS19)",
+      type:"Practical"
     },
+
     {
-      start:"01:00 PM",
-      end:"01:50 PM",
-      subject:"Lunch Break",
-      type:"Lunch"
+      ...LUNCH,
+      start:"12:50 PM",
+      end:"2:00 PM"
     },
+
     {
-      start:"02:00 PM",
-      end:"02:50 PM",
-      subject:"Data Structures Tutorial",
-      code:"15B11CI311",
+      start:"2:00 PM",
+      end:"2:50 PM",
+      subject:"Data Structures",
+      code:"DS",
       teacher:"NFCS12",
       room:"3116",
-      type:"Tutorial",
-      batch:"F7"
-    },
-    {
-      start:"03:00 PM",
-      end:"04:50 PM",
-      subject:"Free Time",
-      type:"Free"
+      batch:"F7 + F8",
+      type:"Tutorial"
     }
+
   ],
 
   wednesday:[
-    {
-      start:"09:00 AM",
-      end:"09:50 AM",
-      subject:"Free Time",
-      type:"Free"
-    },
-    {
-      start:"10:00 AM",
-      end:"10:50 AM",
-      subject:"Mathematical Foundations for AI & Data Science",
-      code:"25B11MA213",
-      teacher:"NFMATHS3",
-      room:"3093",
-      type:"Lecture",
-      batch:"F7 + F8"
-    },
+
     {
       start:"11:00 AM",
       end:"11:50 AM",
       subject:"Data Structures",
-      code:"15B11CI311",
-      teacher:"Ayushi Pandey",
+      code:"DS",
+      teacher:"AYP",
       room:"3093",
-      type:"Lecture",
-      batch:"F7 + F8"
+      batch:"F7 + F8",
+      type:"Lecture"
     },
+
     {
       start:"12:00 PM",
       end:"12:50 PM",
       subject:"Economics",
-      code:"15B11HS211",
-      teacher:"Alok",
+      code:"ECO",
+      teacher:"ALOK",
       room:"3093",
-      type:"Lecture",
-      batch:"F7 + F8"
+      batch:"F7 + F8",
+      type:"Lecture"
     },
+
     {
-      start:"01:00 PM",
-      end:"01:50 PM",
-      subject:"Lunch Break",
-      type:"Lunch"
+      ...LUNCH,
+      start:"12:50 PM",
+      end:"2:00 PM"
     },
+
     {
-      start:"02:00 PM",
-      end:"02:50 PM",
-      subject:"Mathematical Foundations for AI & Data Science",
-      code:"25B11MA213",
-      teacher:"Ajay",
+      start:"2:00 PM",
+      end:"2:50 PM",
+      subject:"Math. Foundations for AI & DS",
+      code:"MFAIDS",
+      teacher:"AJAY",
       room:"3093",
-      type:"Lecture",
-      batch:"F7 + F8"
+      batch:"F7 + F8",
+      type:"Lecture"
     },
+
     {
-      start:"03:00 PM",
-      end:"03:50 PM",
-      subject:"Free Time",
-      type:"Free"
-    },
-    {
-      start:"04:00 PM",
-      end:"04:50 PM",
+      start:"3:00 PM",
+      end:"3:50 PM",
       subject:"Database Management Systems",
-      code:"24B11CS213",
-      teacher:"Gaurav Sinha",
+      code:"DBMS",
+      teacher:"GAH",
       room:"3093",
-      type:"Lecture",
-      batch:"F7 + F8"
+      batch:"F7 + F8",
+      type:"Lecture"
+    },
+
+    {
+      start:"4:00 PM",
+      end:"4:50 PM",
+      subject:"Economics",
+      code:"ECO",
+      teacher:"PRV",
+      room:"3116",
+      batch:"F7 + F8",
+      type:"Tutorial"
     }
+
   ],
+
   thursday:[
-    {
-      start:"09:00 AM",
-      end:"09:50 AM",
-      subject:"Mathematical Foundations for AI & Data Science",
-      code:"25B11MA213",
-      teacher:"NFMATHS4",
-      room:"3045",
-      type:"Lecture",
-      batch:"F7 + F8"
-    },
-    {
-      start:"10:00 AM",
-      end:"10:50 AM",
-      subject:"Data Structures Lab",
-      code:"15B17CI518",
-      teacher:"DTS",
-      room:"244B",
-      type:"Lab",
-      batch:"F7 + F8"
-    },
+
     {
       start:"11:00 AM",
       end:"12:50 PM",
-      subject:"Python Lab",
-      code:"15B17CI371",
-      teacher:"Zubair, NFCS32, NFCS17",
-      room:"Cyber Security Lab (CR105)",
-      type:"Lab",
-      batch:"F7 + F8 + F9"
+      subject:"Data Structures Lab",
+      code:"DS Lab",
+      teacher:"NRP / ANU / AYP / DTS",
+      room:"CL1",
+      batch:"F8 + f7 (NFCS12)",
+      type:"Practical"
     },
+
     {
-      start:"01:00 PM",
-      end:"01:50 PM",
-      subject:"Lunch Break",
-      type:"Lunch"
+      ...LUNCH,
+      start:"12:50 PM",
+      end:"2:00 PM"
     },
+
     {
-      start:"02:00 PM",
-      end:"02:50 PM",
+      start:"2:00 PM",
+      end:"2:50 PM",
       subject:"Theory of Computation",
-      code:"24B11CS212",
-      teacher:"Ankit",
+      code:"TOC",
+      teacher:"ANK",
       room:"3096",
-      type:"Lecture",
-      batch:"F7 + F8"
+      batch:"F7 + F8",
+      type:"Lecture"
     },
+
     {
-      start:"03:00 PM",
-      end:"03:50 PM",
+      start:"3:00 PM",
+      end:"3:50 PM",
       subject:"Data Structures",
-      code:"15B11CI311",
-      teacher:"Ayushi Pandey",
+      code:"DS",
+      teacher:"AYP",
       room:"3096",
-      type:"Lecture",
-      batch:"F7 + F8"
-    },
-    {
-      start:"04:00 PM",
-      end:"04:50 PM",
-      subject:"Free Time",
-      type:"Free"
+      batch:"F7 + F8",
+      type:"Lecture"
     }
+
   ],
 
   friday:[
-    {
-      start:"09:00 AM",
-      end:"09:50 AM",
-      subject:"Free Time",
-      type:"Free"
-    },
+
     {
       start:"10:00 AM",
       end:"10:50 AM",
-      subject:"Economics",
-      code:"15B11HS211",
-      teacher:"Amba Aggarwal",
-      room:"3045",
-      type:"Lecture",
-      batch:"F7 + F8"
+      subject:"Database Management Systems",
+      code:"DBMS",
+      teacher:"GAH",
+      room:"3096",
+      batch:"F7 + F8",
+      type:"Lecture"
     },
+
     {
       start:"11:00 AM",
       end:"12:50 PM",
-      subject:"Object Oriented Programming using Java Lab",
-      code:"24B15CS214",
-      teacher:"Naved",
-      room:"Computer Lab 2",
-      type:"Lab",
-      batch:"F7 + F8 + F9"
+      subject:"Unix Programming Lab",
+      code:"UP Lab",
+      teacher:"ARJ / Naved",
+      room:"CL2",
+      batch:"F8+F7",
+      type:"Practical"
     },
+
     {
-      start:"01:00 PM",
-      end:"01:50 PM",
-      subject:"Lunch Break",
-      type:"Lunch"
+      ...LUNCH,
+      start:"12:50 PM",
+      end:"3:00 PM"
     },
+
     {
-      start:"02:00 PM",
-      end:"02:50 PM",
-      subject:"Database Management Systems",
-      code:"24B11CS213",
-      teacher:"Gaurav Sinha",
-      room:"3096",
-      type:"Lecture",
-      batch:"F7 + F8"
-    },
-    {
-      start:"03:00 PM",
-      end:"03:50 PM",
-      subject:"Mathematical Foundations for AI & Data Science Tutorial",
-      code:"25B11MA213",
-      teacher:"NFMATHS",
-      room:"3117",
-      type:"Tutorial",
-      batch:"F7"
-    },
-    {
-      start:"04:00 PM",
-      end:"04:50 PM",
-      subject:"Software Engineering",
-      code:"24B11CS223",
-      teacher:"Kedar Nath",
-      room:"3045",
-      type:"Lecture",
-      batch:"F7 + F8"
+      start:"3:00 PM",
+      end:"3:50 PM",
+      subject:"Data Structures",
+      code:"DS",
+      teacher:"AYP",
+      room:"TBA",
+      batch:"F7 + F8",
+      type:"Lecture"
     }
+
   ],
 
   saturday:[
-    {
-      start:"09:00 AM",
-      end:"09:50 AM",
-      subject:"Free Time",
-      type:"Free"
-    },
+
     {
       start:"10:00 AM",
       end:"10:50 AM",
-      subject:"Database Management Systems",
-      code:"24B11CS213",
-      teacher:"Vikas Sharma",
-      room:"3045",
-      type:"Lecture",
-      batch:"F7 + F8"
+      subject:"Math. Foundations for AI & DS",
+      code:"MFAIDS",
+      teacher:"AJAY",
+      room:"3098",
+      batch:"F7 + F8",
+      type:"Lecture"
     },
+
     {
       start:"11:00 AM",
       end:"11:50 AM",
       subject:"Database Management Systems",
-      code:"24B11CS213",
-      teacher:"Gaurav Sinha",
+      code:"DBMS",
+      teacher:"GAH",
       room:"3098",
-      type:"Lecture",
-      batch:"F7 + F8"
+      batch:"F7 + F8",
+      type:"Lecture"
     },
+
     {
       start:"12:00 PM",
       end:"12:50 PM",
-      subject:"Free Time",
-      type:"Free"
+      subject:"Theory of Computation",
+      code:"TOC",
+      teacher:"ANK",
+      room:"3098",
+      batch:"F7 + F8",
+      type:"Lecture"
     }
+
   ]
 
 };
-
-const days=[
+const days = [
   "monday",
   "tuesday",
   "wednesday",
@@ -443,6 +407,9 @@ function getBadgeColor(type){
 
     case "Free":
       return "#ADB5BD";
+
+    case "Break":
+      return "#F4B183";
 
     default:
       return "#588157";
@@ -717,58 +684,54 @@ ${cls.batch ? `
 
   requestAnimationFrame(updateBall);
 
-  window.scrollTo({
-
-    top:0,
-
-    behavior:"smooth"
-
-  });
 
 }
 /* ==========================================================
    TIMELINE BALL
 ========================================================== */
 
-function updateBall(){
+function updateBall() {
 
-  const timeline=document.querySelector(".timeline");
+  const timeline = document.querySelector(".timeline");
 
-  if(!timeline) return;
+  if (!timeline || !ball) return;
 
-  const rect=timeline.getBoundingClientRect();
+  const timelineRect = timeline.getBoundingClientRect();
 
-  const middle=
+  const timelineTop = timelineRect.top + window.scrollY;
 
-      window.scrollY+
+  const timelineHeight = timeline.offsetHeight;
 
-      window.innerHeight/2;
+  const viewportCenter =
+      window.scrollY + window.innerHeight / 2;
 
-  const progress=Math.min(
+  let progress =
+      (viewportCenter - timelineTop) / timelineHeight;
 
-      Math.max(
+  progress = Math.max(0, Math.min(progress, 1));
 
-          (middle-rect.top)/rect.height,
-
-          0
-
-      ),
-
-      1
-
-  );
-
-  ball.style.top=
-
-      progress*(rect.height-18)
-
-      +"px";
-
+  ball.style.top =
+      (timelineHeight - ball.offsetHeight) * progress + "px";
 }
 
-window.addEventListener("scroll",updateBall);
 
-window.addEventListener("resize",updateBall);
+/* ---------- Events ---------- */
+
+window.addEventListener(
+    "scroll",
+    () => requestAnimationFrame(updateBall),
+    { passive: true }
+);
+
+window.addEventListener(
+    "resize",
+    updateBall
+);
+
+window.addEventListener(
+    "load",
+    updateBall
+);
 /* ==========================================================
    DAY BUTTON EVENTS
 ========================================================== */
