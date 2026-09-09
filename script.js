@@ -79,7 +79,7 @@ const timetable = {
 
   ],
 
-  tuesday:[
+  tuesday: [
 
     {
       start:"9:00 AM",
@@ -133,7 +133,18 @@ const timetable = {
 
   ],
 
-  wednesday:[
+  wednesday: [
+
+    {
+      start:"10:00 AM",
+      end:"11:00 AM",
+      subject:"Database Management Systems",
+      code:"DBMS",
+      teacher:"GAH",
+      room:"3096",
+      batch:"F7 + F8",
+      type:"Lecture"
+    },
 
     {
       start:"11:00 AM",
@@ -175,17 +186,6 @@ const timetable = {
     },
 
     {
-      start:"3:00 PM",
-      end:"3:50 PM",
-      subject:"Database Management Systems",
-      code:"DBMS",
-      teacher:"GAH",
-      room:"3093",
-      batch:"F7 + F8",
-      type:"Lecture"
-    },
-
-    {
       start:"4:00 PM",
       end:"4:50 PM",
       subject:"Economics",
@@ -197,8 +197,18 @@ const timetable = {
     }
 
   ],
+   thursday: [
 
-  thursday:[
+    {
+      start:"10:00 AM",
+      end:"11:00 AM",
+      subject:"Theory of Computation",
+      code:"TOC",
+      teacher:"ANK",
+      room:"3096",
+      batch:"F7 + F8",
+      type:"Lecture"
+    },
 
     {
       start:"11:00 AM",
@@ -218,17 +228,6 @@ const timetable = {
     },
 
     {
-      start:"2:00 PM",
-      end:"2:50 PM",
-      subject:"Theory of Computation",
-      code:"TOC",
-      teacher:"ANK",
-      room:"3096",
-      batch:"F7 + F8",
-      type:"Lecture"
-    },
-
-    {
       start:"3:00 PM",
       end:"3:50 PM",
       subject:"Data Structures",
@@ -241,7 +240,7 @@ const timetable = {
 
   ],
 
-  friday:[
+  friday: [
 
     {
       start:"10:00 AM",
@@ -268,7 +267,18 @@ const timetable = {
     {
       ...LUNCH,
       start:"12:50 PM",
-      end:"3:00 PM"
+      end:"2:00 PM"
+    },
+
+    {
+      start:"2:00 PM",
+      end:"3:00 PM",
+      subject:"Math. Foundations for AI & DS",
+      code:"MFAIDS",
+      teacher:"AJAY",
+      room:"3098",
+      batch:"F7 + F8",
+      type:"Lecture"
     },
 
     {
@@ -284,44 +294,10 @@ const timetable = {
 
   ],
 
-  saturday:[
-
-    {
-      start:"10:00 AM",
-      end:"10:50 AM",
-      subject:"Math. Foundations for AI & DS",
-      code:"MFAIDS",
-      teacher:"AJAY",
-      room:"3098",
-      batch:"F7 + F8",
-      type:"Lecture"
-    },
-
-    {
-      start:"11:00 AM",
-      end:"11:50 AM",
-      subject:"Database Management Systems",
-      code:"DBMS",
-      teacher:"GAH",
-      room:"3098",
-      batch:"F7 + F8",
-      type:"Lecture"
-    },
-
-    {
-      start:"12:00 PM",
-      end:"12:50 PM",
-      subject:"Theory of Computation",
-      code:"TOC",
-      teacher:"ANK",
-      room:"3098",
-      batch:"F7 + F8",
-      type:"Lecture"
-    }
-
-  ]
+  saturday: []
 
 };
+     
 const days = [
   "monday",
   "tuesday",
